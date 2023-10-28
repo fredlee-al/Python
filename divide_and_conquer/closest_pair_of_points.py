@@ -113,10 +113,12 @@ def closest_pair_of_points_sqr(points_sorted_on_x, points_sorted_on_y, points_co
     distance(< closest_pair_dis) from mid's Xcoord
     """
 
-    cross_strip = []
-    for point in points_sorted_on_x:
-        if abs(point[0] - points_sorted_on_x[mid][0]) < closest_pair_dis:
-            cross_strip.append(point)
+   cross_strip = []
+mid_x = points_sorted_on_x[mid][0]  # x-coordinate of the middle point
+for point in points_sorted_on_x:
+    if abs(point[0] - mid_x) < closest_pair_dis:
+        cross_strip.append(point)
+
 
     closest_in_strip = dis_between_closest_in_strip(
         cross_strip, len(cross_strip), closest_pair_dis
