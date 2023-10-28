@@ -101,12 +101,13 @@ def closest_pair_of_points_sqr(points_sorted_on_x, points_sorted_on_y, points_co
     # recursion
     mid = points_counts // 2
     closest_in_left = closest_pair_of_points_sqr(
-        points_sorted_on_x, points_sorted_on_y[:mid], mid
-    )
-    closest_in_right = closest_pair_of_points_sqr(
-        points_sorted_on_y, points_sorted_on_y[mid:], points_counts - mid
-    )
-    closest_pair_dis = min(closest_in_left, closest_in_right)
+    points_sorted_on_x, points_sorted_on_y[:mid], mid
+)
+closest_in_right = closest_pair_of_points_sqr(
+    points_sorted_on_x, points_sorted_on_y[mid:], points_counts - mid
+)
+closest_pair_dis = min(closest_in_left, closest_in_right)
+
 
     """
     cross_strip contains the points, whose Xcoords are at a
